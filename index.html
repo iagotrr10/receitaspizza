@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Bolos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Galeria de Bolos</h1>
+    </header>
+
+    <section id="ingredientes">
+      <h2>Ingredientes</h2>
+      <ul>
+          <li>2 xícaras de farinha de trigo</li>
+          <li>1 e 1/2 xícara de açúcar</li>
+          <li>3/4 xícara de chocolate em pó</li>
+          <li>1 colher de sopa de fermento em pó</li>
+          <li>1/2 colher de chá de sal</li>
+          <li>3 ovos</li>
+          <li>1 xícara de leite</li>
+          <li>1/2 xícara de óleo vegetal</li>
+          <li>1 colher de chá de essência de baunilha</li>
+      </ul>
+  </section>
+  
+    <section id="carrossel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="" alt="Bolo de Chocolate">
+                <img src="https://imgs.search.brave.com/vy6_eojZZpRgLyy57BNGvUGhygqlvoz7jx8P7h9UK-w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zMi5n/bGJpbWcuY29tL0Ja/VVV3N1h5ZThXeHI0/N0Nwb05MMzVNS1Mz/Zz0vZS5nbGJpbWcu/Y29tL29nL2VkL2Yv/b3JpZ2luYWwvMjAy/MS8xMi8wOS9yZWNl/aXRhLWRlLWJvbG8t/ZGUtbW9yYW5nby5q/cGc" alt="Bolo de Morango">
+                <img src="https://imgs.search.brave.com/ERBUVKbtJyIzQw3_oltJGxkIu1oqsJiz5deVSO3YIdw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVjZWl0ZXJpYS5j/b20uYnIvd3AtY29u/dGVudC91cGxvYWRz/L2JvbG8tZGUtY2Vu/b3VyYS1kZS1saXF1/aWRpZmljYWRvci5q/cGVn" alt="Bolo de Cenoura">
+                <img src="https://imgs.search.brave.com/8A9OnyPjFuKK10aYDfmojrZY9EI9dCAGzNWmDYPhGWE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92b2Fs/emlyYS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDIv/Qm9sby1kZS1GZXN0/YS1SZWQtVmVsdmV0/LTEwMjR4MTAyNC5q/cGc" alt="Bolo Red Velvet">
+                <img src="https://moinhoglobo.com.br/wp-content/uploads/2019/03/08-bolo-chocolate.png" alt="https://www.estadao.com.br/resizer/oFDrDp3xgfze9zuyNaR5gnyURVA=/arc-anglerfish-arc2-prod-estadao/public/FIVYQFU6J5ND3PYRA6XQHR4NW4.jpg"> <!-- Repetição para o loop -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Receitas Deliciosas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Lógica do Carrossel
+        const carouselSlide = document.querySelector('.carousel-slide');
+        let counter = 1;
+        const size = carouselSlide.querySelector('img').clientWidth;
+
+        carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+
+        setInterval(() => {
+            if (counter >= 4) counter = 0;
+            carouselSlide.style.transition = "transform 0.4s ease-in-out";
+            counter++;
+            carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+        }, 2000); // Tempo de transição (2 segundos)
+    </script>
+
+</body>
+</html>
